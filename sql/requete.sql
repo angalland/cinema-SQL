@@ -29,6 +29,37 @@ VAlUES  ('Ford', 'Harrison', '1942-07-13', 'M' ),
         ('Taylor-Joy', 'Anya', '1996-04-16', 'F')
         ('Black', 'Jack', '1969-08-28', 'M');
 
+INSERT INTO personnage (nom_personnage)
+VALUES  ('Indiana jones'),
+        ('Marion Ravenwood'),
+        ('Harrison Ford'),
+        ('Luke Skywalker'),
+        ('Princess Leia Organa'),
+        ('Melissa'),
+        ('Nadine'),
+        ('Fred'),
+        ('Iris'),
+        ('Patrick Chirac'),
+        ('Michel Saint-Josse'),
+        ('Sophie Gatineau'),
+        ('Beth'),
+        ('Ellie'),
+        ('Mario'),
+        ('Luigi'),
+        ('Princesse Peach'),
+        ('Bowser');
+
+INSERT INTO personnage (nom_personnage)
+SELECT 'Batman'
+FROM DUAL WHERE NOT EXISTS (SELECT * FROM personnage WHERE nom_personnage = 'Batman');
+
+
+
+
+
+
+
+
 
 
 
