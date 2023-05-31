@@ -1,11 +1,11 @@
 CREATE TABLE Genre(
-   id_genre INT,
+   id_genre INT AUTO_INCREMENT,
    nom_genre VARCHAR(25) NOT NULL,
    PRIMARY KEY(id_genre)
 );
 
 CREATE TABLE personne(
-   id_personne INT,
+   id_personne INT AUTO_INCREMENT,
    nom VARCHAR(25) NOT NULL,
    prenom VARCHAR(25) NOT NULL,
    date_naissance DATE NOT NULL,
@@ -14,13 +14,13 @@ CREATE TABLE personne(
 );
 
 CREATE TABLE role(
-   id_role INT,
+   id_role INT AUTO_INCREMENT,
    nom_role VARCHAR(25) NOT NULL,
    PRIMARY KEY(id_role)
 );
 
 CREATE TABLE Realisateur(
-   id_realisateur INT,
+   id_realisateur INT AUTO_INCREMENT,
    id_personne INT NOT NULL,
    PRIMARY KEY(id_realisateur),
    UNIQUE(id_personne),
@@ -28,7 +28,7 @@ CREATE TABLE Realisateur(
 );
 
 CREATE TABLE Acteur(
-   id_acteur INT,
+   id_acteur INT AUTO_INCREMENT,
    id_personne INT NOT NULL,
    PRIMARY KEY(id_acteur),
    UNIQUE(id_personne),
@@ -36,7 +36,7 @@ CREATE TABLE Acteur(
 );
 
 CREATE TABLE Film(
-   id_film INT,
+   id_film INT AUTO_INCREMENT,
    duree_film TIME NOT NULL,
    titre VARCHAR(25) NOT NULL,
    date_sortie DATE NOT NULL,
