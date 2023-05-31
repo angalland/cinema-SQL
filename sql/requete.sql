@@ -19,3 +19,12 @@ LEFT JOIN personne
 	ON realisateur.id_personne = personne.id_personne
 LEFT JOIN film
 	ON realisateur.id_realisateur = film.id_realisateur
+
+-- d. Nombre de films par genre (classés dans l’ordre décroissant)
+SELECT film.titre, genre.nom_genre AS 'genre'
+FROM posseder_genre
+INNER JOIN film
+	ON posseder_genre.id_film = film.id_film
+INNER JOIN genre
+	ON posseder_genre.id_genre = genre.id_genre
+ORDER BY film.titre DESC;
