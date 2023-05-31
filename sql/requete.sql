@@ -5,3 +5,9 @@ INNER JOIN realisateur
 	ON film.id_realisateur = realisateur.id_realisateur
 INNER JOIN personne
 	ON realisateur.id_personne = personne.id_personne;
+
+-- b. Liste des films dont la durée excède 2h15 classés par durée (du + long au + court)
+SELECT film.titre, TIME_FORMAT(SEC_TO_TIME(film.duree_film*60), '%Hh%i') AS duree
+FROM film
+WHERE film.duree_film >= 135
+ORDER BY duree DESC;
