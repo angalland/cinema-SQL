@@ -11,3 +11,11 @@ SELECT film.titre, TIME_FORMAT(SEC_TO_TIME(film.duree_film*60), '%Hh%i') AS dure
 FROM film
 WHERE film.duree_film >= 135
 ORDER BY duree DESC;
+
+-- c. Liste des films d’un réalisateur (en précisant l’année de sortie) 
+SELECT personne.prenom, personne.nom, film.titre, YEAR(film.date_sortie) AS 'annee de sortie'
+FROM realisateur
+LEFT JOIN personne
+	ON realisateur.id_personne = personne.id_personne
+LEFT JOIN film
+	ON realisateur.id_realisateur = film.id_realisateur
