@@ -83,3 +83,10 @@ FROM personne
 INNER JOIN acteur
 	ON personne.id_personne = acteur.id_personne
 GROUP BY personne.sexe;
+
+-- k. Liste des acteurs ayant plus de 50 ans (âge révolu et non révolu)
+SELECT personne.prenom, personne.nom
+FROM personne
+INNER JOIN acteur
+	ON personne.id_personne = acteur.id_personne
+WHERE (YEAR(NOW()) - YEAR(personne.date_naissance)) >= 50;
