@@ -76,3 +76,10 @@ SELECT film.titre
 FROM film
 WHERE (YEAR(NOW()) - YEAR(film.date_sortie)) < 5
 ORDER BY film.date_sortie DESC;
+
+-- j. Nombre d’hommes et de femmes parmi les acteurs
+SELECT personne.sexe, COUNT(personne.sexe)
+FROM personne
+INNER JOIN acteur
+	ON personne.id_personne = acteur.id_personne
+GROUP BY personne.sexe;
