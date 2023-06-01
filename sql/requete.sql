@@ -90,3 +90,13 @@ FROM personne
 INNER JOIN acteur
 	ON personne.id_personne = acteur.id_personne
 WHERE (YEAR(NOW()) - YEAR(personne.date_naissance)) >= 50;
+
+-- l. Acteurs ayant joué dans 3 films ou plus
+SELECT personne.prenom, personne.nom
+FROM jouer
+INNER JOIN acteur
+	ON jouer.id_acteur = acteur.id_acteur
+INNER JOIN personne
+	ON acteur.id_personne = personne.id_personne
+GROUP BY personne.prenom, personne.nom
+HAVING COUNT(jouer.id_film) >= 3;
