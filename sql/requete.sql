@@ -27,3 +27,13 @@ INNER JOIN genre
 	ON posseder_genre.id_genre = genre.id_genre
 GROUP BY posseder_genre.id_genre
 ORDER BY film DESC;
+
+-- e. Nombre de films par réalisateur (classés dans l’ordre décroissant)
+SELECT personne.prenom, personne.nom, COUNT(film.id_realisateur) AS 'film'
+FROM film
+INNER JOIN realisateur
+	ON film.id_realisateur = realisateur.id_realisateur
+INNER JOIN personne
+	ON realisateur.id_personne = personne.id_personne
+GROUP BY personne.nom, personne.prenom
+ORDER BY film DESC;
