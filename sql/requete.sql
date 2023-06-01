@@ -47,4 +47,18 @@ INNER JOIN acteur
 	ON jouer.id_acteur = acteur.id_acteur
 INNER JOIN personne
 	ON acteur.id_personne = personne.id_personne
-WHERE film.id_film = 6;
+WHERE film.titre = 'stars-wars IV: un nouvel espoir'
+
+-- g. Films tournés par un acteur en particulier (id_acteur) avec leur rôle et l’année de sortie (du film le plus récent au plus ancien)
+SELECT film.titre, personnage.nom_personnage, YEAR(film.date_sortie) as 'annee'
+FROM jouer
+INNER JOIN film
+	ON jouer.id_film = film.id_film
+INNER JOIN personnage
+	ON jouer.id_personnage = personnage.id_personnage
+INNER JOIN acteur
+	ON jouer.id_acteur = acteur.id_acteur
+INNER JOIN personne
+	ON acteur.id_personne = personne.id_personne
+WHERE nom='ford'
+ORDER BY annee ;
