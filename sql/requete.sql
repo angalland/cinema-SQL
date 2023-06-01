@@ -62,3 +62,11 @@ INNER JOIN personne
 	ON acteur.id_personne = personne.id_personne
 WHERE nom='ford'
 ORDER BY annee ;
+
+-- h. Liste des personnes qui sont à la fois acteurs et réalisateurs
+SELECT personne.prenom, personne.nom
+FROM personne
+INNER JOIN acteur
+	ON personne.id_personne = acteur.id_personne
+INNER JOIN realisateur
+	ON personne.id_personne = realisateur.id_personne;
