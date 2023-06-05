@@ -1,0 +1,43 @@
+Liste des vues :
+Version de base
+- index.php : 	- header (nav avec lien pour list_film, list_realisateur, list_acteur)
+		- main (new film ?)
+		- footer (reseaux socieaux, contact, mention légale)
+
+- list_film :	- header
+		- main : tableau : titre, affiche, genre, lien sur le titre avec id_film pour detail_film
+		- footer
+		
+- detail_film :	- header 
+		- main : titre, date de sortie, durée, note, synopsis, genre, realisateur avec un lien dessus vers la page personne par id_realisateur, acteur avec un lien dessus vers la page personne par id_acteur
+		- footer	    
+
+- list_realisateur :	- header
+			- main : tableau : nom et prenom avec lien pour personne avec id_personne
+			- footer
+		    
+- list_acteur :	- header 
+		- maim : tableau : nom et prenom avec lien pour personne avec id_personne
+		- footer
+
+- personne :	- header
+		- main : - nom, prenom, date de naissance, age (avec fonction age(calcule de l'age par la date de naissance) et sexe
+			 - liste des films dans lequelle il a tourné par id_film via table jouer
+			 - liste des films qu'il a réalisé par id_film via table film	
+		- footer
+
+Version admin ?
+la nav bar possederait 3 lien supplémentaire ajout_film, update_film, ajout_personne
+
+- ajout_personne: - header
+		  - main : - formulaire avec nom, prénom, date de naissance, sexe, check box réalisateur ou acteur (les 2) ajoute une personne dans la base de donnée personne
+		  - footer
+
+- ajout_film :	- header
+  		- main : formulaire avec titre, durée, date de sortie, note, synopsis, réalisateur, acteur. bouton qui ajoute un film a la base de donnée film et jouer
+		- footer
+
+- update_film:	- header
+		- main: - formulaire avec titre, durée, date de sortie, note, synopsis, réalisateur, acteur. bouton qui modifie la base de donnée film et jouer. 
+			- bouton supprimer le film sur la meme page
+		- footer
